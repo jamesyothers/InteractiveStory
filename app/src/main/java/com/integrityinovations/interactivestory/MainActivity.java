@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Button;
-import android.widget.Toast;
+import android.content.Intent;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,8 +25,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // convert editable string to string
                 String name = mNameField.getText().toString();
-                Toast.makeText(MainActivity.this, name, Toast.LENGTH_LONG).show();
+                startStory();
             }
         });
+    }
+
+    private void startStory() {
+        Intent intent = new Intent(this, StoryActivity.class);
+        startActivity(intent);
     }
 }
